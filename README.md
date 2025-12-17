@@ -17,7 +17,7 @@ Side note: This nano unit I cherish. I have had this Jetson nano unit for about 
 # ON NANO:
 
 
-4. [Install swap file](https://jkjung-avt.github.io/setting-up-nano/) to nano to avoid memory issues. An example of memory issue is your on board CSI camera working once, but failing afterwords. Note 8gb file in home/mnt/. Also note your total free space by observing Ubuntu's "Other locations" folder and "Computer", which are virtual locations to look on data about your root folder size.
+4. [Install swap file](https://jkjung-avt.github.io/setting-up-nano/) to nano to avoid memory issues. An example of memory issue is your on board CSI camera working once, but failing afterwords. Note 8gb file in /mnt/. Also note your total free space by observing Ubuntu's "Other locations" folder and "Computer", which are virtual locations to look on data about your root folder size.
 
 
 5. Time to run some demos. Open terminal and run commands:
