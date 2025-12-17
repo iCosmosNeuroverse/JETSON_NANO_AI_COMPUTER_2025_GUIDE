@@ -3,13 +3,13 @@
 Side note: This nano unit I cherish. I have had this Jetson nano unit for about 7 years now. It's the same unit that ended up getting me featured by Nvidia for pothole detection project that I had posted. NVIDIA still remains world's most powerful AI driver a company worth over 3 trillion. Go to [Nvidia Jetson feature page](https://developer.nvidia.com/embedded/community/jetson-projects) and search for "pothole" then select smart pothole detector project that pops up in the results, or check out the [short link](https://developer.nvidia.com/embedded/community/jetson-projects/ai_pothole_detector).
 
 
-# Guide to get Jetson Nano B01 4GB up and running Self Driving using Android Phone as camera (incase your CSI camera port is damaged), with Jetson nano Ai computer unit as the brain
+# Guide to get Jetson Nano B01 4GB up and running Self Driving using Android Phone as camera (incase your CSI camera port is damaged), or via the same CSI Camera if on board camera is okay. with Jetson nano Ai computer unit as the brain
 
 
 
 # ON A WINDOWS HOST OR LINUX HOST MACHINE:
 
-1. Download FEI's donkey car/jetcar SD prebuilt image with all dependencies:  https://peter115342.github.io/FEI_jetracer/docs/FEIcar/FEIcar_installation/ 
+1. Download FEI's donkey car/jetcar SD prebuilt image with all dependencies. This repo doesn't immediately provide self driving, as it showcases an object detection demo driven by a human controlling a jetson nano enabled rc car. However, the environment is crucially well established to facilitate self driving, the same I will eventually apply to my full scale hypercar prototype.
 2. Remove sd card from nano.
 3. Use adaptor, plug in host computer, then format sd card with sd card formatter.4. Burn image with Balena Echer.
 
@@ -73,9 +73,10 @@ Eg:
 >>> python manage_.py drive --ip_cam_url="http://192.168.100.192:8080/video" (manage_.py was originally from Fei, but I modified and created a separate file "manage_" to have IPCamera usage functionality)
 ```
 
-Acquire donkey pretrained models from https://github.com/autorope/donkey_datasets and place them in mycar/models folder. Integrate when asked. Alter self_drive.py MODEL_PATH according to any model.
+[Acquire donkey pretrained models](https://github.com/autorope/donkey_datasets) from circuit_launch_20210716/models and place them in mycar/models folder. Integrate when asked. 
 
 Use pretrained pilot ai for self driving inference with external ipcamera via phone from playstore like IPWebcam on android  or onboard CSICamera
+
 #Example invoke
 
 ```
@@ -90,6 +91,7 @@ Use pretrained pilot ai for self driving inference with external ipcamera via ph
 
 
 Use non ml for self driving inference with external ipcamera via phone from playstore like IPWebcam on android  or onboard CSICamera
+
 #Example invoke
 
 ```
