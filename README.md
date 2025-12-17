@@ -29,7 +29,7 @@ Side note: This nano unit I cherish. I have had this Jetson nano unit for about 
 
 6. Copy my python files self_drive_basic.py, self_drive.py, and csi_cam_test.py, and  ip_cam_test.py to the "mycar" directory.
 
-Note, before invoking drive on the nano, if you just have a camera and no servo /steering/throttle pwm attached to NANOP, you can do a dev test by disabling the following /home/mycar/myconfig.py. Add the following lines to the top of the file after "YOLO_NMS_THRESHOLD = 0.4" and before the commented out section. Ensure they aren't commented out:
+Note, before invoking drive on the nano, if you just have a camera and no servo /steering/throttle pwm yet attached to NANO, you can do a dev test by disabling the following /home/mycar/myconfig.py. Add the following lines to the top of the file after "YOLO_NMS_THRESHOLD = 0.4" and before the commented out section. Ensure they aren't commented out:
 
 ```
 DRIVE_TRAIN_TYPE="mock"
