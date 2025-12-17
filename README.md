@@ -61,7 +61,7 @@ swapon --show  --verify on
 So a straightforward route looks like:
 
 ```
-mk command to make swap file > chmod to secure swap file > make it permanent if desired > show command to verify swap
+mk command to make swap file > chmod to secure swap file > make it permanent if desired (or just run swapon command with the file name upon reboot) > show command to verify swap
 ```
 
 
