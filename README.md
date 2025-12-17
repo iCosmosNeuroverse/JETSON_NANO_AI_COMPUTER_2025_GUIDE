@@ -5,6 +5,11 @@ Side note: This nano unit I cherish. I have had this Jetson nano unit for about 
 
 # Guide & Code to get Jetson Nano B01 4GB up and running Self Driving using Android Phone as camera (incase your CSI camera port is damaged), or via the same CSI Camera if on board camera is okay. with Jetson nano Ai computer unit as the brain
 
+Use command below to see how much ram your system has. If like mine, your nano has 4 usb ports, 1 CSI camera port, a power jack and micro usb power jack, you have the B01 4GB nano ai computer kit with 4gb. If you have 2 camera ports, you have B02.
+
+```
+cat /proc/meminfo | head
+```
 
 
 # ON A WINDOWS HOST OR LINUX HOST MACHINE:
@@ -28,7 +33,7 @@ swapon --show
 or
 
 ```
-free -h
+free -h 
 ```
 
 If you don't make the swap permanent as the tutorial above shows you only need to run swapon after reboot.
