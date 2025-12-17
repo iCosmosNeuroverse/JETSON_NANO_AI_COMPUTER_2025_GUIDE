@@ -9,7 +9,7 @@ Side note: This nano unit I cherish. I have had this Jetson nano unit for about 
 
 # ON A WINDOWS HOST OR LINUX HOST MACHINE:
 
-1. [Download FEI's donkey car/jetcar SD card [prebuilt image](https://peter115342.github.io/FEI_jetracer/docs/FEIcar/FEIcar_installation/) with all dependencies. This repo doesn't immediately provide self driving, as it showcases an object detection demo driven by a human controlling a jetson nano enabled rc car. However, the environment is crucially well established to facilitate self driving, the same I will eventually apply to my full scale hypercar prototype.
+1. Download FEI's donkey car/jetcar SD card [prebuilt image](https://peter115342.github.io/FEI_jetracer/docs/FEIcar/FEIcar_installation/) with all dependencies. This repo doesn't immediately provide self driving, as it showcases an object detection demo driven by a human controlling a jetson nano enabled rc car. However, the environment is crucially well established to facilitate self driving, the same I will eventually apply to my full scale hypercar prototype.
 2. Remove sd card from nano.
 3. Use adaptor, plug in host computer, then format sd card with sd card formatter.4. Burn image with Balena Echer.
 
