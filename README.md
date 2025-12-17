@@ -51,6 +51,13 @@ sudo swapon -a  --turn on swap
 swapon --show  --verify on
 ```
 
+So a straightforward route looks like:
+
+```
+mk command to make swap file > chmod to secure swap file > make it permanent if desired > show command to verify swap
+```
+
+
 6. Time to run some demos. Open terminal and run commands:
 
 ```
