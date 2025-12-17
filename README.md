@@ -19,8 +19,39 @@ Side note: This nano unit I cherish. I have had this Jetson nano unit for about 
 
 4. [Install swap file](https://jkjung-avt.github.io/setting-up-nano/) to nano to avoid memory issues. An example of memory issue is your on board CSI camera working once, but failing afterwords. Note 8gb file in /mnt/. Also note your total free space by observing Ubuntu's "Other locations" folder and "Computer", which are virtual locations to look on data about your root folder size.
 
+Confirm swap with 
 
-5. Time to run some demos. Open terminal and run commands:
+```
+swapon --show
+```
+
+or
+
+```
+free -h
+```
+
+If you don't make the swap permanent as the tutorial above shows you only need to run swapon after reboot.
+
+```
+sudo swapon /mnt/8gb.swap
+```
+
+Other helpful commands
+
+```
+sudo nano /etc/fstab  (before entering /etc/fstab to add entry
+...enter file and add entry as seen in tutorial...
+
+sudo chmod 600 /mnt/8gb.swap --secure swap after mk command
+
+
+sudo swapoff /mnt/8gb.swap  --turn off swap
+sudo swapon -a  --turn on swap
+swapon --show  --verify on
+```
+
+6. Time to run some demos. Open terminal and run commands:
 
 ```
 >>> source env/bin/activate
