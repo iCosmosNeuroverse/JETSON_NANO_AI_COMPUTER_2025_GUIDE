@@ -136,12 +136,15 @@ Use pretrained pilot ai for self driving inference with external ipcamera via ph
 
 ## Alternatively, where Fei_Jetracer utilizes default human in the loop based wb control ui via separate host machine connection to running nano unit, via >>> python manage.py drive, which is standard DonkeyCar behaviour, we can also invoke autonomous driving without writing another python file as I did above, by following:
 
+```
 >>> python manage.py drive --model <your model path/model name.extension>
+```
 
 Example:
 
+```
 >>> python manage.py drive --model models/pilot.h5
-
+```
 
 Use non ml for self driving inference with external ipcamera via phone from playstore like IPWebcam on android  or onboard CSICamera
 
