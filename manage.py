@@ -52,8 +52,8 @@ class PilotDebug:
         print(f"[PilotDebug] angle={angle:.3f}, throttle={throttle:.3f}")
         img = image.copy()
         cv2.putText(img, f"A:{angle:.2f} T:{throttle:.2f}", (10,20),cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0,255,0), 1)
-        cv2.imshow("PilotDebug Feed", img)
-        cv2.waitKey(1)
+        #cv2.imshow("PilotDebug Feed", img)
+        #cv2.waitKey(1)
         return angle, throttle
 
 
