@@ -176,7 +176,7 @@ In my case I test here before connecting nano to my full scale real life hyperca
 
 #My nano is running browser and also showing the live stream of what the csi mpi camera is seeing, which is the screen itself that nano is connected to:
 
-![alt text](https://github.com/iCosmosNeuroverse/JETSON_NANO_AI_COMPUTER_2025_GUIDE_AND_CODE/blob/main/cosmos_jetson_nano_ip_connection_capture2.png)
+![alt text](https://github.com/iCosmosNeuroverse/JETSON_NANO_AI_COMPUTER_2025_GUIDE_AND_CODE/blob/main/cosmos_jetson_nano_ip_connection_capture_2.png)
  
 ![alt text](https://github.com/iCosmosNeuroverse/JETSON_NANO_AI_COMPUTER_2025_GUIDE_AND_CODE/blob/main/cosmos_jetson_nano_ip_connection_capture.png)
 
@@ -190,6 +190,8 @@ This way you'd have what I call "augmented and partially realistic self driving"
 Could be useful before attaching wheels and steering to nano.
 
 [https://youtu.be/Nhg4BjgkWGQ](https://youtu.be/Nhg4BjgkWGQ)
+
+This will be a part of my self driving full scale hypercar project, for icognium[](https://icognium.github.io/).
 
 
 
