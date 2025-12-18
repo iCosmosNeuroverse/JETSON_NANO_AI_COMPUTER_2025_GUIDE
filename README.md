@@ -167,8 +167,9 @@ http://192.168.100.197:8887
 ```
 
 
-# An example road clip you can use to simulate jetson travelling , by focusing camera on a computer screen playing the clip. You can use nano itself to run the video while focusing it's own 
-camera on the clip though that could be costly memory wise.
+# An example road clip you can use to simulate jetson travelling , by focusing camera on a computer screen playing the clip. 
+
+You can use nano itself to run the video while focusing it's own camera on the clip though that could be costly memory wise. Maybe download the clip 240 to 360p and run it as a native video instead of on chrome instance.
 
 This way you'd have what I call "augmented and partially realistic self driving" test where nano is seeing the road and responding by sending out it's output signals though not to PWM modules to servos and wheels.
 
