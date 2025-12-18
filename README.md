@@ -210,6 +210,8 @@ In my case I test here before connecting nano to my full scale real life hyperca
  
 ![alt text](https://github.com/iCosmosNeuroverse/JETSON_NANO_AI_COMPUTER_2025_GUIDE_AND_CODE/blob/main/cosmos_jetson_nano_ip_connection_capture.png)
 
+Note: Do not hit "Start vehicle button on ui" as the vehicle should laready be running given "starting vehicle at <value> hz" in terminal.
+
 
 # An example road clip you can use to "partially simulate" the real jetson unit travelling in reality while using a virtual screen of road being traversed, before it's camera, by focusing camera on a computer screen playing the clip. 
 
