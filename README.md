@@ -41,7 +41,7 @@ free -h
 If you don't make the swap permanent as the tutorial above shows you only need to run swapon after reboot.
 
 ```
-sudo swapon /mnt/8gb.swap
+sudo swapon /mnt/8GB.swap
 ```
 
 Other helpful commands
@@ -50,10 +50,10 @@ Other helpful commands
 sudo nano /etc/fstab  (before entering /etc/fstab to add entry
 ...enter file and add entry as seen in tutorial...
 
-sudo chmod 600 /mnt/8gb.swap --secure swap after mk command
+sudo chmod 600 /mnt/8GB.swap --secure swap after mk command
 
 
-sudo swapoff /mnt/8gb.swap  --turn off swap
+sudo swapoff /mnt/8GB.swap  --turn off swap
 sudo swapon -a  --turn on swap
 swapon --show  --verify on
 ```
@@ -65,18 +65,33 @@ mk command to make swap file > chmod to secure swap file > make it permanent if 
 ```
 
 
-6. Time to run some demos. Open terminal and run commands:
+5. Time to run some demos. Open terminal and run commands:
 
 ```
 >>> source env/bin/activate
->>> cd ~/mycar
 ```
 
-# 6. Copy my python files self_drive_basic.py, self_drive.py, and csi_cam_test.py, and  ip_cam_test.py to the "mycar" directory.
+Note we won't use Fei's manage.py mod because it includes yolo detection and has no self driving pilot prepared. Feis environment overall, i.e. the prebuilt sd card image, is ideal but the manage.py file is not configured for self driving, only experimental object recognition by human driven nano unit/car.
+
+You will instead create a new donkeycar app with command below then navigate to the folder. 
+
+```
+donkey createcar --path ~/mycar
+```
+
+Example:
+
+```
+donkey createcar --path ~/jamaica_ai_car
+```
+
+# 6. Copy my python files manage.py, manage_ByIpCam.py, csi_cam_test.py, and  ip_cam_test.py to the "jamaica_ai_car" or your directory if you made one by another name.
 
 Note, before invoking drive on the nano, if you just have a camera and no servo /steering/throttle pwm yet attached to NANO, you can do a dev test by disabling the following /home/mycar/myconfig.py. Add the following lines to the top of the file after "YOLO_NMS_THRESHOLD = 0.4" and before the commented out section. Ensure they aren't commented out:
 
 ```
+USE_CONSTANT_THROTTLE = True
+THROTTLE = 0.25
 DRIVE_TRAIN_TYPE="mock"
 CONTROLLER_TYPE="mock"
 USE_JOYSTICK_AS_DEFAULT=False
@@ -94,80 +109,79 @@ Before next command, TEST YOUR NANO CAMERA FIRST, a window should pop up showing
 >>> gst-launch-1.0 nvarguscamerasrc ! 'video/x-raw(memory:NVMM), width=1280, height=720, framerate=30/1' ! nvvidconv ! 'video/x-raw, format=BGRx' ! videoconvert ! xvimagesink
 ```
 
-You can talso test ip cam by invoking my csi_cam_test.py file. >>> python csi_cam_test.py
+You can also test ip cam by invoking my csi_cam_test.py file. >>> python csi_cam_test.py
 
-7. Time to invoke object detection using jetson nano:
-
-```
->>> python manage_.py drive 
-```
-
-8. FOR USERS WITHOUT CSI CAMERA:
-
-Invoke my modified manage_.py file if you don't have nano CSI camera, and you have android and IPWebcam app. Start app, then start server on phone which shows a camera stream.
-
-You can test ip cam by invoking my ip_cam_test.py file. >>> python ip_cam_test.py
-
-```
->>> python manage.py drive --ip_cam_url="<Your phone ip cam url or other device ip cam url>"
-```
-
-Eg:
-
-```
->>> python manage_.py drive --ip_cam_url="http://192.168.100.192:8080/video" (manage_.py was originally from Fei, but I modified and created a separate file "manage_" to have IPCamera usage functionality)
-```
-
+7. Time to invoke self driving inference:
+   
 [Acquire donkey pretrained models](https://github.com/autorope/donkey_datasets) from circuit_launch_20210716/models and place them in mycar/models folder. Integrate when asked. 
 
 Use pretrained pilot ai for self driving inference with external ipcamera via phone from playstore like IPWebcam on android  or onboard CSICamera
 
-#Example invoke
+By now you would have copied manage.py file to the new donkeycar folder you just created or jamaica_ai_car if you used my name example.
+Also copy csi_cam_test.py, and ip_cam_test.py  to your new project dir. 
+
+use >>> python csi_cam_test.py and >>> python ip_cam_test.py to test for csi or ip cam.
+
+# Warning: Close with CTR+C in terminal to close camera feed test window properly. Or cam will fail to start next time.
+
+~~Unstuck cam state if you forgot to use CTRL+C to close last argus camera to avoid position/camera error next cam test attempt
 
 ```
->>> python self_drive.py "http://192.168.100.192:8080/video" "models/pilot_21-08-12_4.h5"
+>>> sudo systemctl restart nvargus-daemon
 ```
+#Also, crucially, copy keras.py to a FEIcar/donkeycar/parts/ and replaced when asked. _I modified donkeycar file to accommodate for missing CSI camera frames that cause crash during stream. manage.py was also modified to accommodate as well as do things like add IPcamera support, and crucially enable loading of pretrained model for self driving. I used the onboard CSI nano camera, but coded the IPcamera as an alternative to enable external android phone cam to be used as camera source._
 
-#Example invoke
-
-```
->>> python self_drive.py "models/pilot_21-08-12_4.h5" (uses csi onboard instead of external ip android cam)
-```
-
-## Alternatively, where Fei_Jetracer utilizes default human in the loop based wb control ui via separate host machine connection to running nano unit, via >>> python manage.py drive, which is standard DonkeyCar behaviour, we can also invoke autonomous driving without writing another python file as I did above, by following:
+8. Navigate:
 
 ```
->>> python manage.py drive --model <your model path/model name.extension>
+cd <your new donkeycar project name>
+```
+Example
+```
+cd jamaica_ai_car
 ```
 
-Example:
+#9. Invoke manage.py with a trt model which is lightweight and faster than the h5 models from the dataset zoo.
+This is what facilitates self driving!
 
 ```
->>> python manage.py drive --model models/pilot.h5
+>>> python manage.py drive --model "models/pilot_21-08-12_4.trt" (uses csi onboard instead of external ip android cam)
 ```
 
-Use non ml for self driving inference with external ipcamera via phone from playstore like IPWebcam on android  or onboard CSICamera
-
-#Example invoke
+Instead of onboard camera, use IP Android Camera via app like IPWebcam then hit start server button buttom options after scrolling down:
 
 ```
->>> python self_drive_basic.py "http://192.168.100.192:8080/video" "models/pilot_21-08-12_4.h5" (External IP camera android phone etc feed)
+>>> python manage_.py drive --ip_cam_url <android cam ip>" --model "<pretrained pilot driver model>" (uses IPCamera/external android cam)
 ```
 
-#Example invoke
-
+Example
 ```
->>> python self_drive_basic.py "models/pilot_21-08-12_4.h5" (uses csi onboard instead of external ip android cam)
-```
-
-Note your nano ip. You can navigate to it on host  computer and drive the nano by ui controls if you had joystick. May be possible to use a separate mobile. Eg my nano ip. Use ifconfig on your nano, and do not choose the broadcast item. Yours should look like (but not be a mirror of) mine:
-
-```
-http://192.168.100.197:8887
+>>> python manage_ByIpCam.py --ip_cam_url http://192.168.100.192:8080/video"  --model "models/pilot_21-08-12_4.trt" (uses IPCamera/external android cam)
 ```
 
+Wait for this after executing manage.py then go to <jetsonip>:port  on another device connected to internet with a screen you can use. 
+You will be connecting to Jetson unit that's basically now a donkey car instance.
 
-# An example road clip you can use to "partially simulate" jetson travelling in reality while using a virtual screen of road being traversed, before it's camera, by focusing camera on a computer screen playing the clip. 
+```
+Recording Change = False
+Setting Recording = False
+```
+
+For eg you will navigate to  192.168.100.197:8087 on your Android phone browser for eg and there you will see your live Jetson nano I computer donkeycar instance. 
+Here you have the option of driving the nano as a rc car to collect images and write them to tubs for training granted if it was connected to wheels and servos or enable it to drive itself based on a loaded pilot.
+
+In my case I test here before connecting nano to my full scale real life hypercar prototype. In other caes people use this to test before connecting to their small scale rc car.
+
+#Below is what the screen on the phone or computer will look like when you access the live nano instance.
+
+#My nano is running browser and also showing the live stream of what the csi mpi camera is seeing, which is the screen itself that nano is connected to:
+
+![alt text](https://github.com/iCosmosNeuroverse/JETSON_NANO_AI_COMPUTER_2025_GUIDE_AND_CODE/blob/main/cosmos_jetson_nano_ip_connection_capture2.png)
+ 
+![alt text](https://github.com/iCosmosNeuroverse/JETSON_NANO_AI_COMPUTER_2025_GUIDE_AND_CODE/blob/main/cosmos_jetson_nano_ip_connection_capture.png)
+
+
+# An example road clip you can use to "partially simulate" the real jetson unit travelling in reality while using a virtual screen of road being traversed, before it's camera, by focusing camera on a computer screen playing the clip. 
 
 You can use nano itself to run the video while focusing it's own camera on the clip though that could be costly memory wise. Maybe download the clip 240 to 360p and run it as a native video instead of on chrome instance.
 
