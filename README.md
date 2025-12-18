@@ -211,6 +211,7 @@ In my case I test here before connecting nano to my full scale real life hyperca
 ![alt text](https://github.com/iCosmosNeuroverse/JETSON_NANO_AI_COMPUTER_2025_GUIDE_AND_CODE/blob/main/cosmos_jetson_nano_ip_connection_capture.png)
 
 Note: Do not hit "Start vehicle button on ui" as the vehicle should laready be running given "starting vehicle at <value> hz" in terminal.
+
 Note: If you don't see a camera feed in the ui, or see an error, please ensure the prior steps especially copying my keras.py file, and manage.py file was done appropiately.
 
 
@@ -224,8 +225,10 @@ Useful before attaching wheels and steering to nano.
 
 [https://youtu.be/Nhg4BjgkWGQ](https://youtu.be/Nhg4BjgkWGQ)
 
-For convinent testing it may be helpful to acquire a long MPI/SCI camera cable, and swap out the short default one that ships with jetson nano kit.
+# For convinent testing it may be helpful to acquire a long MPI/SCI camera cable, and swap out the short default one that ships with jetson nano kit.
+
 In my case I need my camera wire to be long enough to stretch along some length of the full scale hypercar, so the camera can view the road ahead.
+
 Even before being attached to the car, it's now conveneient to to Screen based perception testing; i.e. the nano unit can be off to the side on a table while I can hold the mpi camera comfortably while focusing it on a screen with a road being traversed.
 
 
