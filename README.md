@@ -219,7 +219,7 @@ Note: If you don't see a camera feed in the ui, or see an error, please ensure t
 
 You can use nano itself to run the video while focusing it's own camera on the clip though that could be costly memory wise. Maybe download the clip 240 to 360p and run it as a native video instead of on chrome instance.
 
-This way one may call "Screen-based perception testing" or "Vision in the loop" testing where nano is seeing the road and responding by sending out it's output signals though not to PWM modules to servos and wheels.
+This is what some may call "Screen-based perception testing" or "Vision in the loop" testing where nano is seeing the road and responding by sending out it's output signals though not to PWM modules to servos and wheels.
 
 Useful before attaching wheels and steering to nano.
 
@@ -231,7 +231,7 @@ You can buy the cable here: https://www.ebay.com/itm/116151757885
 
 In my case I need my camera wire to be long enough to stretch along some length of the full scale hypercar, so the camera can view the road ahead.
 
-Even before being attached to the car, it's now conveneient to to Screen based perception testing; i.e. the nano unit can be off to the side on a table while I can hold the mpi camera comfortably while focusing it on a screen with a road being traversed.
+Even before being attached to the car, it's now convenient to do Screen based perception testing; i.e. the nano unit can be off to the side on a table while I can hold the mpi camera comfortably while focusing it on a screen with a road being traversed.
 
 
 
