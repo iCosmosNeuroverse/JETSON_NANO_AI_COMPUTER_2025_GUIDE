@@ -156,7 +156,7 @@ Instead of onboard camera, use IP Android Camera via app like IPWebcam then hit 
 
 Example
 ```
->>> python manage_ByIpCam.py --ip_cam_url http://192.168.100.192:8080/video" --model "models/pilot_21-08-12_4.trt" (uses IPCamera/external android cam)
+>>> python manage_ByIpCam.py --ip_cam_url http://192.168.100.192:8080/video" --model "models/pilot_21-08-12_4.trt" --throttle 0.25 (uses IPCamera/external android cam)
 ```
 
 Wait for this after executing manage.py then go to <jetsonip>:port  on another device connected to internet with a screen you can use. 
