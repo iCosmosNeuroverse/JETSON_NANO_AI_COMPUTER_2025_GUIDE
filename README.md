@@ -12,7 +12,7 @@ This will be a part of my self driving big/full scale hypercar project, for [ico
 
 ![alt text](https://github.com/iCosmosNeuroverse/JETSON_NANO_AI_COMPUTER_2025_GUIDE_AND_CODE/blob/main/_DIO_LUCCIOLA_3D.png)
 
-## Hand Crafted real, full scale hypercar body and chassis. 
+## I then hand crafted real, full scale hypercar body and chassis. 
 
 ~~> Don't mind the blue wrap/rough exterior, all will a white lacebark inspired material, like seen on the roof:
 
