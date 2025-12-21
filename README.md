@@ -173,18 +173,18 @@ cd jamaica_ai_car
 This is what facilitates self driving!
 
 ```
->>> python manage.py drive --model "models/pilot_21-08-12_4.trt" --throttle 0.25 (uses csi onboard instead of external ip android cam)
+>>> python manage.py drive --model "models/pilot_21-08-12_4.trt"  (uses csi onboard instead of external ip android cam)
 ```
 
 Instead of onboard camera, use IP Android Camera via app like IPWebcam then hit start server button buttom options after scrolling down:
 
 ```
->>> python manage.py drive --ip_cam_url <android cam ip>" --model "<pretrained pilot driver model>" --throttle 0.25 (uses IPCamera/external android cam)
+>>> python manage.py drive --ip_cam_url <android cam ip>" --model "<pretrained pilot driver model>"  (uses IPCamera/external android cam)
 ```
 
 Example
 ```
->>> python manage_ByIpCam.py --ip_cam_url http://192.168.100.192:8080/video" --model "models/pilot_21-08-12_4.trt" --throttle 0.25 (uses IPCamera/external android cam)
+>>> python manage_ByIpCam.py --ip_cam_url http://192.168.100.192:8080/video" --model "models/pilot_21-08-12_4.trt" (uses IPCamera/external android cam)
 ```
 
 Wait for this after executing manage.py then go to <jetsonip>:port  on another device connected to internet with a screen you can use. 
