@@ -230,7 +230,7 @@ a clear sign that nano has began to do inference based on the loaded .h5 model.
 
 ![alt text](https://github.com/iCosmosNeuroverse/JETSON_NANO_AI_COMPUTER_2025_GUIDE_AND_CODE/blob/main/cosmos_jetson_nano_ip_connection_capture_3.png)
 
-~ _I used auto steer mode above, enabling steering, while throttle is fixed. If you correctly replaced the files, and also loaded the appropriate model wrt the donkey pretrained guide table, against the Module specified in manage.py you will successfully transition from user to auto steer mode without model mismatch/loading or numpy errors.
+## I used auto steer mode above, enabling steering, while throttle is fixed. If you correctly replaced the files, and also loaded the appropriate model wrt the donkey pretrained guide table, against the Module specified in manage.py you will successfully transition from user to auto steer mode without model mismatch/loading or numpy errors.
 
 
 
@@ -261,7 +261,7 @@ Useful before attaching wheels and steering to nano.
 
 [https://youtu.be/Nhg4BjgkWGQ](https://youtu.be/Nhg4BjgkWGQ)
 
-# For convinent testing it may be helpful to acquire a long MPI/CSI camera cable, and swap out the short default one that ships with jetson nano kit.
+# For convenent testing it may be helpful to acquire a long MPI/CSI camera cable, and swap out the short default one that ships with jetson nano kit.
 
 You can buy the cable here: https://www.ebay.com/itm/116151757885
 
@@ -272,7 +272,7 @@ Even before being attached to the car, it's now convenient to do Screen based pe
 
 # A quick little hack incase your CSI camera secure latch is damaged and missing:
 
-You can find a medicine cartridge of pills, cut two rectangular pieces of the container which are thin, stack them together, then use tape to wrap creating a handle you can then bend, leaving a portion of the stacked pieces exposed.
+You can find a medecine cartridge of pills, cut two rectangular pieces of the container which are thin, stack them together, then use tape to wrap creating a handle you can then bend, leaving a portion of the stacked pieces exposed.
 Then use those to secure the CSI camera, by touching atleast one set of vertices then gently pushing dowards using the thumb on the handle bend.
 
 ![alt text](https://github.com/iCosmosNeuroverse/JETSON_NANO_AI_COMPUTER_2025_GUIDE_AND_CODE/blob/main/cosmos_jetson_nano_camera_latch_hack.png)
