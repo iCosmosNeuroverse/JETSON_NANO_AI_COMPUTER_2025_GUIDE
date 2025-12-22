@@ -275,5 +275,4 @@ Even before being attached to the car, it's now convenient to do Screen based pe
 You can find a medicine cartridge of pills, cut two rectangular pieces of the container which are thin, stack them together, then use tape to wrap creating a handle you can then bend, leaving a portion of the stacked pieces exposed.
 Then use those to secure the CSI camera, by touching atleast one set of vertices then gently pushing dowards using the thumb on the handle bend.
 
-
-
+![alt text](https://github.com/iCosmosNeuroverse/JETSON_NANO_AI_COMPUTER_2025_GUIDE_AND_CODE/blob/main/cosmos_jetson_nano_camera_latch_hack.png)
