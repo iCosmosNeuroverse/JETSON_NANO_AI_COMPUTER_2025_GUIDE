@@ -230,7 +230,7 @@ a clear sign that nano has began to do inference based on the loaded .h5 model.
 
 ![alt text](https://github.com/iCosmosNeuroverse/JETSON_NANO_AI_COMPUTER_2025_GUIDE_AND_CODE/blob/main/cosmos_jetson_nano_ip_connection_capture_3.png)
 
-~ _I used auto steer mode above, enabling steering, while throttle is fixed.
+~ _I used auto steer mode above, enabling steering, while throttle is fixed. If you correctly replaced the files, and also loaded the appropriate model wrt the donkey pretrained guide table, against the Module specified in manage.py you will successfully transition from user to auto steer mode without model mismatch/loading or numpy errors.
 
 
 
