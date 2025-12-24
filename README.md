@@ -279,7 +279,7 @@ Then use those to secure the CSI camera, by touching atleast one set of vertices
 
 # Additional pretrained models to try
 
-Try muosvr's pretrained model, but first you need to rename the files in model dir.
+Try [muosvr's pretrained models](https://github.com/Muosvr/mycar), but first you need to rename the files in model dir.
 When investigating the .File files, there's hdf5 in the header, indicating it's indeed h5 files that were probbaly renamed to .File when he uploaded the repo.
 
 Command to analyze file header:
@@ -302,6 +302,7 @@ Result containing HDf5 data proving h5 origin which donkeycar/tf can supposedly 
 
 
 Navigate to models folder in muosvr's downloaded repo, then run command below:
+
 ```
 Get-ChildItem -File | Where-Object { $_.Extension -eq "" } | ForEach-Object {
     $newName = $_.Name + ".h5"
@@ -314,4 +315,10 @@ Test loading in python on your desktop before puting on jetson nano:
 ```
 >>> from tensorflow import keras
 >>> keras.models.load_model("models/mypilot.h5")
-``
+```
+
+If you [click on muosvr's blog link in the repo](https://medium.com/@jasonwu_49390/donkey-car-part-3-neural-net-1f9b7ea939c), you can see he's listed a ranking of the pretrained models. 
+The top most entry/first row represents the most accurate model with the least loss.
+It represents a model that processes multiple images compareed to the single image default mypilot model, with a bit of performance sacrifice.
+
+![alt text](https://github.com/iCosmosNeuroverse/JETSON_NANO_AI_COMPUTER_2025_GUIDE_AND_CODE/blob/main/muosvr_pretrained_rank.png)
