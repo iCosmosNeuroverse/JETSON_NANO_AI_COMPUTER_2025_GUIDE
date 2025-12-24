@@ -338,7 +338,7 @@ pred=model.predict(dummy_frame1)
 
 
 
-# 3DCNN: Stack 3 frames as 3DCNNS need multiple frames
+# 3DCNN: Stack 3 frames as 3DCNNS need multiple frames (particularly 3, given 3D nature)
 
 dummy_frame2 = np.zeros((120, 160, 3), dtype=np.float32)
 model = keras.models.load_model("models/mypilot")
@@ -352,3 +352,26 @@ dummy_frames_e = np.expand_dims(dummy_frames, axis=0)
 model2 = keras.models.load_model("models/speedup3dcnn/pilot_3Dspeedup")
 pred=model.predict(dummy_frames_e)
 ```
+
+
+# ..and thereafter, pipeline in manage.py of donkeycar kit would need to change to accomodate 3DCNN KerasCategorical input range.
+Instead of consuming single images, modify your manage.py to be similar to muosvr's manage_3DCNN.py class (before defining and loading your KerasCategorical pilot):
+
+```
+    #Part to save multiple image arrays from camera
+    class ImageArrays:
+        def __init__(self):
+            tmp = np.zeros((120, 160, 3))
+            self.images = [tmp for i in range(3)]
+
+        def run(self, image):
+            self.images.pop(0)
+            self.images.append(image)
+            return np.array(self.images)
+
+    image_arrays = ImageArrays()
+    V.add(image_arrays, inputs=['cam/image_array'],
+                        outputs=['cam/image_arrays'])
+
+```
+
