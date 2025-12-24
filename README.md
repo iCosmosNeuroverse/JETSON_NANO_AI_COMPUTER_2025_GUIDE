@@ -314,7 +314,7 @@ Test loading in python on your desktop before puting on jetson nano:
 
 ```
 >>> from tensorflow import keras
->>> keras.models.load_model("models/mypilot.h5")
+>>> model = keras.models.load_model("models/mypilot.h5")
 ```
 
 If you [click on muosvr's blog link in the repo](https://medium.com/@jasonwu_49390/donkey-car-part-3-neural-net-1f9b7ea939c), you can see he's listed a ranking of the pretrained models. 
@@ -322,3 +322,27 @@ The top most entry/first row represents the most accurate model with the least l
 It represents a model that processes multiple images compareed to the single image default mypilot model, with a bit of performance sacrifice.
 
 ![alt text](https://github.com/iCosmosNeuroverse/JETSON_NANO_AI_COMPUTER_2025_GUIDE_AND_CODE/blob/main/muosvr_pretrained_rank.png)
+
+
+# Test prediction capacity
+
+```
+import numpy as np
+
+# Single frame
+dummy_frame = np.zeros((120, 160, 3), dtype=np.float32)
+model = keras.models.load_model("models/mypilot")
+pred=model.predict(dummy_frame)
+
+# Stack 3 frames as 3dCNNS need multiple frames
+dummy_frames = np.stack([dummy_frame, dummy_frame, dummy_frame], axis=0)
+
+# Add batch dimension
+x = np.expand_dims(frames, axis=0)
+
+model = keras.models.load_model("models/speedup3dcnn/pilot_3Dspeedup")
+pred=model.predict(dummy_frame)
+
+pred = model.predict(x)
+print(pred)
+```
