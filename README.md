@@ -286,7 +286,7 @@ When investigating the .File files, there's hdf5 in the header, indicating it's 
 Command to analyze file header:
 
 ```
-Format-Hex model_17.File | Select-Object -First 5
+Format-Hex mypilot | Select-Object -First 5
 ```
 
 Result containing HDf5 data proving h5 origin which donkeycar/tf can supposedly consume:
