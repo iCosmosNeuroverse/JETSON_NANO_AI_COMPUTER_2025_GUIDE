@@ -307,8 +307,9 @@ Navigate to models folder in muosvr's downloaded repo, then run command below if
 ```
 Get-ChildItem -File | Where-Object { $_.Extension -eq "" } | ForEach-Object {
     $newName = $_.Name + ".h5"
-    Write-Host "Would rename '$($_.Name)' to '$newName'"
+    Rename-Item $_.FullName -NewName $newName
 }
+
 ```
 
 Test loading in python on your desktop before puting on jetson nano:
