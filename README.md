@@ -325,7 +325,7 @@ It represents a model that processes multiple images compareed to the single ima
 ![alt text](https://github.com/iCosmosNeuroverse/JETSON_NANO_AI_COMPUTER_2025_GUIDE_AND_CODE/blob/main/muosvr_pretrained_rank.png)
 
 
-# Test prediction capacity on Windows or other host machine before putting on Jetson Nano Ai compter/Disk 4.5.1 ~ Ubuntu 18.04
+# Test prediction capacity on Windows or other host machine before putting on Jetson Nano Ai computer/Disk 4.5.1 ~ Ubuntu 18.04
 
 ```
 from tensorflow import keras
