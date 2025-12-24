@@ -328,22 +328,22 @@ It represents a model that processes multiple images compareed to the single ima
 # Test prediction capacity
 
 ```
+from tensorflow import keras
 import numpy as np
 
-# Single frame
-dummy_frame = np.zeros((120, 160, 3), dtype=np.float32)
+# Standard CNN: Single frame
+dummy_frame = np.zeros((1,120, 160, 3), dtype=np.float32)
 model = keras.models.load_model("models/mypilot")
 pred=model.predict(dummy_frame)
 
-# Stack 3 frames as 3dCNNS need multiple frames
+
+
+# 3DCNN: Stack 3 frames as 3DCNNS need multiple frames
 dummy_frames = np.stack([dummy_frame, dummy_frame, dummy_frame], axis=0)
 
 # Add batch dimension
-x = np.expand_dims(frames, axis=0)
+x = np.expand_dims(dummy_frames, axis=0)
 
 model = keras.models.load_model("models/speedup3dcnn/pilot_3Dspeedup")
-pred=model.predict(dummy_frame)
-
-pred = model.predict(x)
-print(pred)
+pred=model.predict(dummy_frames)
 ```
