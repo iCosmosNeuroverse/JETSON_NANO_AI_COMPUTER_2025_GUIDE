@@ -286,7 +286,13 @@ When investigating the .File files, there's hdf5 in the header, indicating it's 
 Command to analyze file header:
 
 ```
+Windows
+
 Format-Hex mypilot | Select-Object -First 5
+
+Ubuntu
+
+hexdump -C mypilot | head -n 5
 ```
 
 Result containing HDf5 data proving h5 origin which donkeycar/tf can supposedly consume:
@@ -305,10 +311,21 @@ Result containing HDf5 data proving h5 origin which donkeycar/tf can supposedly 
 Navigate to models folder in muosvr's downloaded repo, then run command below if you want to rename, though that's optional, as keras typically check content not names:
 
 ```
+Windows
+
 Get-ChildItem -File | Where-Object { $_.Extension -eq "" } | ForEach-Object {
     $newName = $_.Name + ".h5"
     Rename-Item $_.FullName -NewName $newName
 }
+
+Ubuntu
+
+for f in *; do
+    if [ -f "$f" ] && [[ "$f" != *.* ]]; then
+        mv "$f" "$f.h5"
+    fi
+done
+
 
 ```
 
