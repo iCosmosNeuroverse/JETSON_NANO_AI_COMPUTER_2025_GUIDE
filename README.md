@@ -276,3 +276,42 @@ You can find a medecine cartridge of pills, cut two rectangular pieces of the co
 Then use those to secure the CSI camera, by touching atleast one set of vertices then gently pushing dowards using the thumb on the handle bend.
 
 ![alt text](https://github.com/iCosmosNeuroverse/JETSON_NANO_AI_COMPUTER_2025_GUIDE_AND_CODE/blob/main/cosmos_jetson_nano_camera_latch_hack.png)
+
+# Additional pretrained models to try
+
+Try muosvr's pretrained model, but first you need to rename the files in model dir.
+When investigating the .File files, there's hdf5 in the header, indicating it's indeed h5 files that were probbaly renamed to .File when he uploaded the repo.
+
+Command to analyze file header:
+
+```
+Format-Hex model_17.File | Select-Object -First 5
+```
+
+Result containing HDf5 data proving h5 origin which donkeycar/tf can supposedly consume:
+
+```
+           00 01 02 03 04 05 06 07 08 09 0A 0B 0C 0D 0E 0F
+
+00000000   89 48 44 46 0D 0A 1A 0A 00 00 00 00 00 08 08 00  HDF............
+00000010   04 00 10 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+00000020   FF FF FF FF FF FF FF FF C8 FE 31 00 00 00 00 00  ........Èþ1.....
+00000030   FF FF FF FF FF FF FF FF 00 00 00 00 00 00 00 00  ................
+00000040   60 00 00 00 00 00 00 00 01 00 00 00 00 00 00 00  `...............
+```
+
+
+Navigate to models folder in muosvr's downloaded repo, then run command below:
+```
+Get-ChildItem -File | Where-Object { $_.Extension -eq "" } | ForEach-Object {
+    $newName = $_.Name + ".h5"
+    Write-Host "Would rename '$($_.Name)' to '$newName'"
+}
+```
+
+Test loading in python on your desktop before puting on jetson nano:
+
+```
+>>> from tensorflow import keras
+>>> keras.models.load_model("models/mypilot.h5")
+``
