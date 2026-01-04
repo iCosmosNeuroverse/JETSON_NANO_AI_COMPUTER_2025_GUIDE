@@ -16,6 +16,7 @@ This will be a part of my self driving big/full scale hypercar project, for [ico
 
 ~~> Don't mind the blue wrap/rough exterior, all will a white lacebark inspired material, like seen on the roof (note the roof itself will be adjusted too):
 
+See [build log](https://medium.com/@theomniautomobil/how-to-create-a-real-life-full-scale-hypercar-prototype-53901b355967).
 
 ![alt text](https://github.com/iCosmosNeuroverse/JETSON_NANO_AI_COMPUTER_2025_GUIDE_AND_CODE/blob/main/LUCCIOLA_FULL_SCALE_GIF_1_GIF.gif)
 .
